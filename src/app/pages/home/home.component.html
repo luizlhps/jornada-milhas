@@ -1,0 +1,21 @@
+<app-banner
+  [alt]="'Banner da Aplicação Jornada'"
+  [src]="'assets/imagens/banner-homepage.png'"
+></app-banner>
+
+<app-container *ngIf="showComponents">
+  <h2>Promoções</h2>
+  <app-form-busca></app-form-busca>
+  <div class="card-wrapper">
+    <app-card-busca></app-card-busca>
+    <app-card-busca></app-card-busca>
+    <app-card-busca></app-card-busca>
+    <app-card-busca></app-card-busca>
+    <app-card-busca></app-card-busca>
+    <app-card-busca></app-card-busca>
+    <app-card-busca></app-card-busca>
+    <app-card-busca></app-card-busca>
+  </div>
+
+  <h2>Depoimentos</h2>
+</app-container>
