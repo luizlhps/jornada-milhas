@@ -54,10 +54,36 @@ export class FormBaseComponent implements OnInit {
     }
 
     this.cadastroForm.get('aceitarTermos')?.updateValueAndValidity();
-    this.cadastroForm.valueChanges.subscribe((values) => console.log(values));
 
     // this.formularioService.setCadastro(this.cadastroForm)
+    this.onBirthDayChange();
   }
+
+  //^\d+$
+  onBirthDayChange() {
+    this.cadastroForm.get('nascimento')?.valueChanges.subscribe((value) => {
+      // this.cadastroForm
+      //   .get('nascimento')
+      //   ?.setValue(this.maskDate(value), { emitEvent: false });
+      // console.log(this.maskDate(value));
+    });
+  }
+
+  maskDate(ev: any) {
+    let value = ev.target.value;
+    if (!value) return '';
+    let v = value.replace(/\D/g, '').slice(0, 10);
+    if (v.length >= 5) {
+      return `${v.slice(0, 2)}/${v.slice(2, 4)}/${v.slice(4)}`;
+    } else if (v.length >= 3) {
+      return `${v.slice(0, 2)}/${v.slice(2)}`;
+    }
+    console.log(v);
+    return;
+  }
+
+  // var m = str.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  // return (m) ? new Date(m[3], m[2]-1, m[1]) : null;
 
   executarAcao() {
     this.acaoClique.emit();

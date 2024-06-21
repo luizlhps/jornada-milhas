@@ -40,6 +40,12 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
 import { CustomDateAdapter } from './shared/adapters/date.adapter';
 import { Platform } from '@angular/cdk/platform';
+import { TextExpandComponent } from './components/text-expand/text-expand.component';
+import { ChatComponent } from './pages/chat/chat.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MarkdownComponent, MarkdownModule } from 'ngx-markdown';
+import { MarkComponent } from './mark/mark.component';
+import { TruncateTextDirective } from './truncate-text.directive';
 
 const MY_DATE_FORMATS = {
   parse: {
@@ -65,6 +71,10 @@ const MY_DATE_FORMATS = {
     CardBuscaComponent,
     CardDepoimentoComponent,
     FormBaseComponent,
+    TextExpandComponent,
+    ChatComponent,
+    MarkComponent,
+    TruncateTextDirective,
   ],
   imports: [
     BrowserModule,
@@ -87,6 +97,8 @@ const MY_DATE_FORMATS = {
     MatNativeDateModule,
     MatDividerModule,
     MatInputModule,
+    HttpClientModule,
+    MarkdownModule.forRoot(),
   ],
   providers: [
     {

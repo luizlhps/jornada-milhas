@@ -1,0 +1,42 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.chat-input-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.chat-input-container {
+  flex-grow: 1;
+  position: relative;
+}
+
+.example-form-field {
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+  overflow: hidden;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+button {
+  margin-left: 10px;
+}

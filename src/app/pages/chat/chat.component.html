@@ -1,0 +1,62 @@
+<div id="app">
+  <div id="container" #container>
+    <div *ngFor="let mensagens of arr">
+      <div
+        class="wrapper"
+        [ngClass]="mensagens.type === 'bot' ? 'expression' : ''"
+      >
+        <div class="chat">
+          <div class="profile">
+            <img [src]="mensagens.type === 'bot' ? this.bot : this.user" />
+          </div>
+          <div class="message">${{ mensagens.text }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form>
+    <textarea
+      [formControl]="input"
+      name="prompt"
+      rows="1"
+      cols="1"
+      placeholder="Ask GPT chat..."
+    ></textarea>
+    <button (click)="handlesubmit($event)">
+      <img src="../assets/send.svg" />
+    </button>
+  </form>
+</div>
+<div class="test">
+  <div appTruncateText [maxLines]="3">
+    Seu texto muito longo aquiSeu texto muito longo aqui...Seu texto muito longo
+    aqui...Seu texto muito longo aqui...Seu texto muito longo aqui...Seu texto
+    muito longo aqui... Seu texto muito longo aquiSeu texto muito longo
+    aqui...Seu texto muito longo aqui...Seu texto muito longo aqui...Seu texto
+    muito longo aqui...Seu texto muito longo aqui... Seu texto muito longo
+    aquiSeu texto muito longo aqui...Seu texto muito longo aqui...Seu texto
+    muito longo aqui...Seu texto muito longo aqui...Seu texto muito longo
+    aqui... Seu texto muito longo aquiSeu texto muito longo aqui...Seu texto
+    muito longo aqui...Seu texto muito longo aqui...Seu texto muito longo
+    aqui...Seu texto muito longo aqui... Seu texto muito longo aquiSeu texto
+    muito longo aqui...Seu texto muito longo aqui...Seu texto muito longo
+    aqui...Seu texto muito longo aqui...Seu texto muito longo aqui... Seu texto
+    muito longo aquiSeu texto muito longo aqui...Seu texto muito longo
+    aqui...Seu texto muito longo aqui...Seu texto muito longo aqui...Seu texto
+    muito longo aqui... Seu texto muito longo aquiSeu texto muito longo
+    aqui...Seu texto muito longo aqui...Seu texto muito longo aqui...Seu texto
+    muito longo aqui...Seu texto muito longo aqui... Seu texto muito longo
+    aquiSeu texto muito longo aqui...Seu texto muito longo aqui...Seu texto
+    muito longo aqui...Seu texto muito longo aqui...Seu texto muito longo
+    aqui... Seu texto muito longo aquiSeu texto muito longo aqui...Seu texto
+    muito longo aqui...Seu texto muito longo aqui...Seu texto muito longo
+    aqui...Seu texto muito longo aqui... Seu texto muito longo aquiSeu texto
+    muito longo aqui...Seu texto muito longo aqui...Seu texto muito longo
+    aqui...Seu texto muito longo aqui...Seu texto muito longo aqui... Seu texto
+    muito longo aquiSeu texto muito longo aqui...Seu texto muito longo
+    aqui...Seu texto muito longo aqui...Seu texto muito longo aqui...Seu texto
+    muito longo aqui... Seu texto muito longo aquiSeu texto muito longo
+    aqui...Seu texto muito longo aqui...Seu texto muito longo aqui...Seu texto
+    muito longo aqui...Seu texto muito longo aqui...
+  </div>
+</div>

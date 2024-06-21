@@ -30,6 +30,7 @@
                 formControlName="nascimento"
                 [matDatepicker]="nascimento"
                 placeholder="Data de Nascimento"
+                (input)="maskDate($event)"
               />
               <mat-datepicker-toggle
                 matSuffix
@@ -211,4 +212,6 @@
       </mat-card-actions>
     </form>
   </mat-card>
+
+  <app-text-expand></app-text-expand>
 </app-container>

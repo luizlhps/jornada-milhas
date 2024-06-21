@@ -1,0 +1,20 @@
+<div class="chat-container">
+  <div class="messages">
+    <!-- Aqui ficariam as mensagens do chat -->
+  </div>
+  <div class="chat-input-wrapper">
+    <div class="chat-input-container" #container>
+      <mat-form-field class="example-form-field">
+        <textarea
+          matInput
+          placeholder="Digite sua mensagem..."
+          #chatInput
+          (input)="adjustTextarea()"
+        ></textarea>
+      </mat-form-field>
+    </div>
+    <button mat-icon-button>
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+</div>
